@@ -1,0 +1,31 @@
+package two;
+
+import org.junit.Test;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
+    public class DummyTest {
+        @Test
+        public void whenGreetBot() {
+            assertThat(
+                    Dummy.answer("Привет, Бот."),
+                    is("Привет, умник.")
+            );
+        }
+
+        @Test
+        public void whenByeBot() {
+            assertThat(
+                    Dummy.answer("Пока."),
+                    is("До скорой встречи.")
+            );
+        }
+
+        @Test
+        public void whenUnknownBot() {
+            assertThat(
+                    Dummy.answer("Сколько будет 2 + 2?"),
+                    is("Это ставит меня в тупик. Задайте другой вопрос.")
+            );
+        }
+    }
